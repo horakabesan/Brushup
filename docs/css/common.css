@@ -1,0 +1,412 @@
+@charset "utf-8";
+.header_top{
+    position: relative;
+}
+.header_top img{
+    object-fit: cover;
+    width: 100%;
+    height: 700px;
+}
+.header_top h1{
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    color: #fff;
+    text-shadow: 3px 3px 6px #3F45D1;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4.0rem;
+}
+
+/* ハンバーガーメニュー */
+
+/* クリック前 */
+.nav_toggle {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    width: 1.75rem;
+    height: 1.5rem;
+    top: 50px;
+    right: 50px;
+}
+.nav_toggle i {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+}
+.nav_toggle i:nth-child(1) {
+    top: 0;
+}
+.nav_toggle i:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.nav_toggle i:nth-child(3) {
+    bottom: 0;
+}
+
+/* クリック後 */
+.nav_toggle.show i:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+    background-color: #3F45D1;
+}
+.nav_toggle.show i:nth-child(2) {
+    opacity: 0;
+}
+.nav_toggle.show i:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+    background-color: #3F45D1;
+}
+
+nav {
+    width: 15%;
+    min-width: 200px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    right: 0;
+    padding: 100px 24px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+    background-color: #fff;
+}
+
+nav ul li{
+    line-height: 40px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: #0b12d1;
+}
+nav ul li a:hover{
+    opacity: 0.5;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ループアニメーション */
+
+.loop_css2 {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    overflow: hidden;
+}
+
+.loop_css2 ul {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.loop_css2 li {
+    display: inline-block;
+    width: calc(100vw / 2);
+    list-style: none;
+    text-align: center;
+}
+
+.loop_css2 li a {
+    display: block;
+}
+
+.loop_css2 li img {
+    object-fit: cover;
+    width: 330px;
+    height: 250px;
+}
+
+/* 
+.loop_css2 li a:hover {
+    opacity: .7;
+} */
+
+.loop_css2 ul:first-child {
+    -webkit-animation: loop 50s -25s linear infinite;
+    animation: loop 50s -25s linear infinite;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+}
+
+.loop_css2 ul + ul {
+    -webkit-animation: loop2 50s  linear infinite;
+    animation: loop2 50s linear infinite;
+}
+
+
+@-webkit-keyframes loop {
+    0% {
+      -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}
+
+@keyframes loop {
+    0% {
+      -webkit-transform: translateX(100%);
+      -ms-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes loop2 {
+    0% {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+    to {
+      -webkit-transform: translateX(-200%);
+      -ms-transform: translateX(-200%);
+      transform: translateX(-200%);
+    }
+}
+
+@keyframes loop2 {
+    0% {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0);
+    }
+    to {
+      -webkit-transform: translateX(-200%);
+      -ms-transform: translateX(-200%);
+      transform: translateX(-200%);
+    }
+}
+
+.news_flex{
+    display: flex;
+}
+
+.news_tittle{
+    position: relative;
+}
+
+.news_tittle img{
+    padding: 40px 0 0 100px;
+    width: 40%;
+    height: auto;
+}
+
+.news_tittle p{
+    position: absolute;
+    top: 60px;
+    left: 130px;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #3F45D1;
+}
+
+/*タブ切り替え全体のスタイル*/
+.tabs {
+    padding: 55px 0 0 200px;
+    background-color: #fff;
+    width: 700px;
+    margin: 0 auto;
+    height: 500px;
+}
+  
+/*タブのスタイル*/
+.tab_item {
+    width: calc(90%/3);
+    height: 50px;
+    border: 3px solid #3F45D1;
+    line-height: 50px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    color: #3F45D1;
+    display: block;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+#border_topic{
+    border-right: none;
+}
+/* #border_live{
+    border-right: none;
+    border-left: none;
+} */
+#border_media{
+    border-left: none;
+}
+
+.tab_item:hover {
+    font-size: 1.5rem;
+}
+  
+/*ラジオボタンを全て消す*/
+input[name="tab_item"] {
+    display: none;
+}
+  
+/*タブ切り替えの中身のスタイル*/
+.tab_content {
+    display: none;
+    padding: 80px 20px 0;
+    clear: both;
+    overflow: hidden;
+}
+  
+  
+/*選択されているタブのコンテンツのみを表示*/
+#all:checked ~ #all_content,
+#programming:checked ~ #programming_content,
+#design:checked ~ #design_content {
+    display: block;
+}
+  
+/*選択されているタブのスタイルを変える*/
+.tabs input:checked + .tab_item {
+    background-color: #3F45D1;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+
+.list_box{
+    font-family: 'Times New Roman', Times, serif;
+    list-style: none;
+    animation: SlideIn 1.6s;
+}
+
+/* CSSアニメーションの設定 */
+@keyframes SlideIn {
+    0% {
+      opacity: 0;/*初期状態では透明に*/
+      transform: translateX(64px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+.list_flex{
+    display: flex;
+}
+
+.list_box p{
+    padding: 18px 10px 0 10px;
+    font-size: 0.8rem;
+}
+
+.list_box li{
+    padding: 10px 10px 30px 10px;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+}
+
+.list_box div a{
+    text-decoration: none;
+    color: #000;
+
+}
+
+.list_box div a:hover{
+    color: #3F45D1;
+}
+
+
+
+
+
+.album_tittle{
+    position: relative;
+}
+
+.album_tittle img{
+    padding: 40px 0 0 100px;
+    width: 9%;
+    height: auto;
+}
+
+.album_tittle p{
+    position: absolute;
+    top: 60px;
+    left: 130px;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #3F45D1;
+}
+
+.album_flex{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.album_flex div{
+    width: 22%;
+    height: 320px;
+    margin-top: 60px;
+    padding: 30px 30px 0 30px;
+}
+
+.album_flex div a:hover{
+   opacity: 0.5; 
+}
+
+.album_flex div a img{
+    object-fit: cover;
+    width: 100%;
+    height: 320px;
+}
+
+
+footer{
+    margin-top: 150px;
+    background-image:url(../images/footer_back.png);
+    height: 150px;
+}
+
+footer p{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    text-shadow: 2px  2px 1px #02125C,
+      -2px  2px 1px #02125C,
+      2px -2px 1px #02125C,
+      -2px -2px 1px #02125C,
+      2px  0px 1px #02125C,
+      0px  2px 1px #02125C,
+      -2px  0px 1px #02125C,
+      0px -2px 1px #02125C;
+}
